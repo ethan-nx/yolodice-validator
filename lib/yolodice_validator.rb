@@ -131,7 +131,7 @@ class YolodiceValidator
     
     def parse_opts argv
       # There is only one option - pass a file containing a CSV dump
-      usage = "Usage: ruby yolodice_validator.rb DUMP_FILE"
+      usage = "Usage: yolodice_validator DUMP_FILE"
       unless argv.length == 1
         puts usage
         exit

@@ -13,7 +13,11 @@ For more information about the algorithms used in YOLOdice, check out our [Frequ
 
 ## Installation
 
-The validator does not depend on any gems. It's only necessare to get the validator's code to use it.
+The validator does not depend on any gems. It's only necessare to get the validator's code to use it. Alternatively you can install it as a gem. It will then install it's own executable, `yolodice-validator` in the system.
+
+### Using a gem from RubyGems
+
+    gem install yolodice-validator
 
 ### By cloning the git repo
 
@@ -28,21 +32,27 @@ Github provides a ZIP archive of the most current revision of the code. Find it 
 
 ## Usage
 
-    ruby yolodice_validator.rb DUMP_FILE
+If you installed the utility as a gem in order to run the code simply type:
+
+    yolodice_validator DUMP_FILE
+
+If you cloned the git repo or downloaded the source, try this:
+
+    ruby lib/yolodice-validator.rb DUMP_FILE
 
 You can get the `DUMP_FILE` by visiting your YOLOdice account and entering the [Seeds panel](https://yolodice.com/#seeds). Then click on any archived seed, a pop-up will appear. Click "Verify bets" button and download the generated dump. That's the file you need.
 
 Example usage:
 
 
-    $ ruby yolodice_validator.rb ~/Downloads/seed_dump_2.csv
+    $ yolodice_validator ~/Downloads/seed_dump_2.csv
     Seed seems OK, validating individual bets
     .................................................
     All bets verified OK
 
 Example check of a seed that contains invalid data:
 
-    $ ruby yolodice_validator.rb ~/Downloads/seed_dump_2.csv                                                
+    $ yolodice_validator ~/Downloads/seed_dump_2.csv
     MISMATCH: secret_hashed_hex, in file: e93e86fd421942a319403738e7dcdbe1f1bf3371ae43d26ff6768d97c2c948d0, calculated: e93e86fd421942a319409738e7dcdbe1f1bf3371ae43d26ff6768d97c2c948d0
     Seed data is not valid, checking bets anyway.
     MISMATCH: bet 6 result, in file: 723763, calculated: 729763

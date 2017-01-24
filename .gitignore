@@ -4,3 +4,4 @@
 .*.un?
 .viminfo 
 .lvimrc
+*.gem

@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require 'yolodice_validator'
+
+options = YolodiceValidator.parse_opts ARGV
+YolodiceValidator.run options

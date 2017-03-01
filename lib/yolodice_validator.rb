@@ -51,7 +51,7 @@ class YolodiceGenerator
   # that include bet profit.
   def generate_bet nonce, amount, target, range
     result = roll nonce
-    profit = (amount * (1_000_000.to_f / target * (1 - 0.01) - 1)).floor
+    profit = (amount * (1_000_000.0 * (1 - 0.01) / target - 1)).floor
     win = case range
           when 'lo'
             result < target
